@@ -1,0 +1,5 @@
+# Connection vars
+u_token: YOUR_API_TOKEN
+u_ssh: YOUR_SSH_FINGERPRINT
+db_master_ip: "{{ hostvars['hostname.localdomain'].ansible_eth0.ipv4.address }}"
+hosts_dest: YOUR_hosts_FILE_DESTINATION

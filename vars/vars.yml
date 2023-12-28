@@ -1,0 +1,5 @@
+---
+# Solr vars
+download_dir: /tmp
+solr_dir: /opt/solr
+solr_version: 8.6.0

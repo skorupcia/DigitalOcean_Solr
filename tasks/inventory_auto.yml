@@ -1,0 +1,31 @@
+---
+- name: Get DigitalOcean API Token
+  set_fact:
+    do_token: "{{ u_token }}"
+
+- name: Get Droplet Information
+  uri:
+    url: "https://api.digitalocean.com/v2/droplets"
+    method: GET
+    headers:
+      Authorization: "Bearer {{ do_token }}"
+    return_content: yes
+  register: droplets
+
+- name: Extract Droplet IP
+  set_fact:
+    droplet_ip: "{{ droplets.json.droplets[0].networks.v4[0].ip_address }}"
+
+- name: Add Droplet IP to Inventory
+  lineinfile:
+    dest: "{{ hosts_dest }}"
+    line: "{{ droplet_ip }}"
+    insertbefore: BOF  # adding line to the beginning of the file
+  when: droplet_ip is defined
+
+- name: Add [digitalocean] group header
+  lineinfile:
+    path: "{{ hosts_dest }}"
+    line: "[digitalocean]"
+    insertbefore: BOF
+  when: droplet_ip is defined
