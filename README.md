@@ -3,7 +3,7 @@ DigitalOcean Solr Search Engine deployment with automatic inventory config
 
 -- Specifications --
 
-macOS: Sonoma 14.1.1
+macOS: Sonoma 14.2.1
 
 Solr version: 8.6.0
 
