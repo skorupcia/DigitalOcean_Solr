@@ -28,4 +28,4 @@ Ubuntu: 23-10-x64
 
 -- Droplet Delete --
 
-If you would like to delete droplet, simply switch state of "Create Digitalocean droplet" from PRESENT to ABSENT.
+If you would like to delete droplet, simply switch state of "Create Digitalocean droplet" from PRESENT to ABSENT and run playbook.
