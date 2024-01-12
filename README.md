@@ -8,7 +8,7 @@ Solr version: 8.6.0
 
 Ubuntu: 23-10-x64
 
-## INSTRUCTIONS 
+## Instructions
 
 1. Add your machine SSH to DigitalOcean account
 2. Update hosts file position
