@@ -1,7 +1,6 @@
-# DigitalOcean_Solr
-DigitalOcean Solr Search Engine deployment with automatic inventory config
+# DigitalOcean Solr Search Engine deployment with automatic inventory config
 
--- Specifications --
+## Specifications
 
 macOS: Sonoma 14.2.1
 
@@ -9,7 +8,7 @@ Solr version: 8.6.0
 
 Ubuntu: 23-10-x64
 
--- INSTRUCTIONS --
+## INSTRUCTIONS 
 
 1. Add your machine SSH to DigitalOcean account
 2. Update hosts file position
@@ -26,6 +25,6 @@ Ubuntu: 23-10-x64
 7. Run droplet.yml playbook to deploy new droplet on DigtalOcean and automatically update hosts inventory file
 8. Connect to your Solr engine with droplet ip and 8983 port (or the one you have applied in config)
 
--- Droplet Delete --
+## Droplet Delete
 
 If you would like to delete droplet, simply switch state of "Create Digitalocean droplet" from PRESENT to ABSENT and run playbook.
