@@ -14,16 +14,17 @@ Ubuntu: 23-10-x64
 2. Update hosts file position
 
    a) ansible_ssh_private_key_file (path to your public ssh file)
-4. Create API token and add to your DigitalOcean project
-5. Update vars files to your personal preferences
+3. Create API token and add to your DigitalOcean project
+4. Update vars files to your personal preferences
 
    a) Update u_token in Connection vars (api_token)
 
    b) Update u_ssh in Connection vars (ssh fingerprint)
 
    c) Update hosts_dest with your actual path to the hosts file (you can use pwd)
-7. Run droplet.yml playbook to deploy new droplet on DigtalOcean and automatically update hosts inventory file
-8. Connect to your Solr engine with droplet ip and 8983 port (or the one you have applied in config)
+5. Run droplet.yml playbook to deploy new droplet on DigtalOcean and automatically update hosts inventory file
+6. Run solr.yml playbook to install solr engine
+7. Connect to your Solr engine with droplet ip and 8983 port (or the one you have applied in config)
 
 ## Droplet Delete
 
