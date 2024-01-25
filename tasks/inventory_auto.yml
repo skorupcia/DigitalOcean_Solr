@@ -21,11 +21,11 @@
     dest: "{{ hosts_dest }}"
     line: "{{ droplet_ip }}"
     insertbefore: BOF  # adding line to the beginning of the file
-  when: droplet_ip is defined and droplet_ip not in lookup('file', hosts_dest)
+  when: droplet_ip is defined and droplet_ip not in lookup('file', hosts)
 
 - name: Add [digitalocean] group header
   lineinfile:
     path: "{{ hosts_dest }}"
     line: "[digitalocean]"
     insertbefore: BOF
-  when: droplet_ip is defined and droplet_ip not in lookup('file', hosts_dest)
+  when: droplet_ip is defined and droplet_ip not in lookup('file', hosts)
