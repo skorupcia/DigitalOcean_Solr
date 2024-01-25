@@ -28,4 +28,4 @@
     path: "{{ hosts_dest }}"
     line: "[digitalocean]"
     insertbefore: BOF
-  when: droplet_ip is defined and droplet_ip not in lookup('file', "{{ hosts_dest }}")
+  when: droplet_ip is defined and "[digitalocean]" not in lookup('file', "{{ hosts_dest }}")
