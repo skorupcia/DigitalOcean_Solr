@@ -1,17 +1,19 @@
+---
+- name: solr playbook
 - hosts: digitalocean
   remote_user: root
 
   vars_files:
     - vars/vars.yml
-  
+
   tasks:
-  - name: Update apt cache if needed
-    apt: update_cache=true cache_valid_time=3600
+    - name: Update apt cache if needed
+      apt: update_cache=true cache_valid_time=3600
 
-  - name: Install python
-    apt: name=python3 state=present
+    - name: Install python
+      apt: name=python3 state=present
 
-  - name: Install Java.
-    apt: name=openjdk-11-jdk state=present
+    - name: Install Java.
+      apt: name=openjdk-11-jdk state=present
 
-  - import_tasks: tasks/solr_engine.yml
+    - import_tasks: tasks/solr_engine.yml
