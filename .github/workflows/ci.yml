@@ -1,4 +1,4 @@
-name: Lint Ansible playbooks
+name: CI
 
 on:
   push:
