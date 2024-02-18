@@ -1,5 +1,7 @@
 # DigitalOcean Solr Search Engine deployment with automatic inventory config
 
+[![Lint Ansible playbooks](https://github.com/skorupcia/DigitalOcean_Solr/actions/workflows/ci.yml/badge.svg)](https://github.com/skorupcia/DigitalOcean_Solr/actions/workflows/ci.yml)
+
 ## Specifications
 
 macOS: Sonoma 14.2.1
