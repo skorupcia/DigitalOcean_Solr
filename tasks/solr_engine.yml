@@ -1,18 +1,19 @@
 ---
 - name: Download Solr.
-  get_url:
-    url: "https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/solr-{{ solr_version }}.tgz"
+  ansible.builtin.get_url:
+    url: https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/solr-{{ solr_version }}.tgz
     dest: "{{ download_dir }}/solr-{{ solr_version }}.tgz"
+    mode: "0644"
 
 - name: Expand Solr.
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ download_dir }}/solr-{{ solr_version }}.tgz"
     dest: "{{ download_dir }}"
     remote_src: true
     creates: "{{ download_dir }}/solr-{{ solr_version }}/README.txt"
 
 - name: Run Solr installation script.
-  command: >
+  ansible.builtin.command: >
     {{ download_dir }}/solr-{{ solr_version }}/bin/install_solr_service.sh
     {{ download_dir }}/solr-{{ solr_version }}.tgz
     -i /opt
@@ -23,4 +24,7 @@
     creates={{ solr_dir }}/bin/solr
 
 - name: Ensure solr is started end enabled on boot.
-  service: name=solr state=started enabled=yes
+  ansible.builtin.service:
+    name: solr
+    state: started
+    enabled: "yes"
